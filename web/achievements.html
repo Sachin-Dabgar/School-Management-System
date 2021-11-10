@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>sample</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css" />
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css" />
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body style="padding: 62px; margin-top: 9px; height: 100vh; overflow: auto; background: radial-gradient(circle, rgba(201,236,148,1) 0%, rgba(92,226,127,1) 100%);">
+    <h1 id="ac-display" class="font-monospace text-center" style="
+          margin-top: 33px;
+          font-size: 32.52px;
+          color: var(--bs-purple);
+          font-weight: bold;
+        ">
+        Welcome to Achievements
+    </h1>
+    <div id="clone-one"
+        style="height: 65vh; overflow: scroll; margin-top: 30px; display: flex; flex-direction: column; align-items: center; box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.137);">
+
+
+
+    </div>
+    </div>
+    <a onclick="work();" class="btn btn-primary font-monospace d-inline-block float-end" role="button" style="
+        width: 116.5px;
+        margin: 30px auto;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: 10px;
+        background-color: #000;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.3);
+      ">show</a>
+    <a class="btn btn-primary font-monospace d-inline-block float-end" role="button" style="
+        width: 116.5px;
+        margin: 30px auto;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+        background-color: rgb(99, 28, 93);
+        box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.3);
+      " href="index.html">Go To Main</a>
+      <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      
+      <script>
+          function work() {
+              
+              let baap = document.getElementById("clone-one")
+              baap.innerHTML = ""
+            eel.displayAc()(function (mes) {
+                let temp = mes[0]
+                let count = mes[1]
+
+                let some = []
+                for (let i = 0; i < count; i++) {
+                    some.push(temp[i])
+                }
+                //alert(some)
+
+                for (let i = 0; i < some.length; i++) {
+                    let data = some[i].split("|")
+                    //alert(data)
+
+                    
+                    let title = data[1]
+                    let desc = data[2]
+
+                    //for(let j = 0; j<data.length; i++){
+                    //}
+
+                    // card banao
+                    baap.style.padding = "30px"
+                    let card = document.createElement("div")
+                    card.style.boxShadow = "0px 0px 15px 5px rgba(0,0,0,0.3)"
+                    card.style.padding = "20px"
+                    card.style.width = "100%"
+                    card.style.marginTop = "20px"
+                    card.style.borderRadius = "45px"
+                    card.style.borderLeft = "15px solid #FF6F91"
+                    let heading = document.createElement("h4")
+                    heading.innerHTML = `${title}`
+                    let para = document.createElement("p")
+                    para.innerHTML = `${desc}`
+                    card.append(heading)
+                    card.append(para)
+                    baap.appendChild(card)
+                    //card end
+                }
+
+            })
+
+
+        }
+    </script>
+</body>
+
+</html>

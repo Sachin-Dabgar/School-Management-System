@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>sample</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap"
+    />
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css" />
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css" />
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body
+    style="
+      background: radial-gradient(
+        circle,
+        rgba(122, 198, 207, 1) 0%,
+        rgba(201, 127, 215, 1) 100%
+      );
+    "
+  >
+    <section
+      class="d-flex flex-row"
+      style="height: 100vh; padding-bottom: 10px"
+    >
+      <section
+        class="d-flex flex-column flex-grow-0 flex-fill"
+        style="
+          width: 30vw;
+          height: 100vh;
+          padding: 1px;
+          border: 4px none var(--bs-pink);
+        "
+      >
+        <div
+          class="d-flex flex-column align-items-center"
+          style="
+            padding: 12px;
+            background: #f7f6f657;
+            border-radius: -5px;
+            box-shadow: 0px 0px 7px 0px;
+            border-style: none;
+            color: var(--bs-indigo);
+          "
+        >
+          <h1
+            style="
+              text-align: center;
+              font-weight: bold;
+              color: rgba(156, 75, 153, 0.82);
+              font-family: Roboto, sans-serif;
+            "
+          >
+            Admin
+          </h1>
+          <a
+            class="btn btn-primary"
+            role="button"
+            style="
+              background: rgba(216, 218, 221, 0.596);
+              width: 70%;
+              color: rgb(0, 0, 0);
+            "
+            href="index.html"
+            >Logout</a
+          >
+        </div>
+        <div style="margin-top: 33px; padding: 4px">
+          <h4
+            style="
+              background: #f8f4f4;
+              box-shadow: 0px 1px 3px 1px;
+              font-family: Roboto, sans-serif;
+              color: var(--bs-pink);
+            "
+          >
+            Manage Staff
+          </h4>
+          <div
+            class="d-flex flex-column align-items-end"
+            style="margin: 0px; margin-top: 15px"
+          >
+            <button
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 5px;
+                color: var(--bs-light);
+                background: rgba(217, 102, 141, 0.71);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+              onclick="calladdStaff();"
+            >
+              Add Staff</button
+            ><button
+              onclick="callremovestaff();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(217, 102, 141, 0.71);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Remove Staff</button
+            ><button
+              onclick="callmodifystaff();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(217, 102, 141, 0.71);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Modify Staff</button
+            ><button
+              onclick="calldisplaystaff();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(217, 102, 141, 0.71);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Display Staff
+            </button>
+          </div>
+        </div>
+        <div style="margin-top: 33px; padding: 4px">
+          <h4
+            style="
+              background: #f8f4f4;
+              box-shadow: 0px 1px 3px 1px;
+              font-family: Roboto, sans-serif;
+              color: rgb(174, 68, 157);
+            "
+          >
+            Manage Students
+          </h4>
+          <div
+            class="d-flex flex-column align-items-end"
+            style="margin: 0px; margin-top: 15px"
+          >
+            <button
+              onclick="calladdstudent();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 5px;
+                color: var(--bs-light);
+                background: rgba(169, 72, 159, 0.65);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Add Students</button
+            ><button
+              onclick="callremovestudent();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(169, 72, 159, 0.65);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Remove Students</button
+            ><button
+              onclick="callmodifystudent();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(169, 72, 159, 0.65);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Modify Students</button
+            ><button
+              onclick="calldisplaystudent();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(169, 72, 159, 0.65);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Display Students
+            </button>
+          </div>
+        </div>
+        <div style="margin-top: 33px; padding: 4px">
+          <h4
+            style="
+              background: #f2ecec;
+              box-shadow: 0px 1px 3px 1px rgb(78, 140, 88);
+              font-family: Roboto, sans-serif;
+              color: rgb(68, 174, 98);
+              border-color: rgb(59, 159, 87);
+              font-size: 19.704px;
+            "
+          >
+            Manage Achievements
+          </h4>
+          <div
+            class="d-flex flex-column align-items-end"
+            style="margin: 0px; margin-top: 15px"
+          >
+            <button
+              onclick="calladdac();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 5px;
+                color: var(--bs-light);
+                background: rgba(115, 169, 72, 0.63);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+              "
+            >
+              Add Achievement</button
+            ><button
+              onclick="callremoveac();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(115, 169, 72, 0.63);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+                font-size: 14px;
+              "
+            >
+              Remove Achievement</button
+            ><button
+              onclick="callmodifyac();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(115, 169, 72, 0.63);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+                font-size: 14px;
+              "
+            >
+              Modify Achievement</button
+            ><button
+              onclick="calldisplayac();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(115, 169, 72, 0.63);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+                font-size: 14px;
+              "
+            >
+              Display Achievement
+            </button>
+          </div>
+        </div>
+        <div style="margin-top: 33px; padding: 4px">
+          <h4
+            style="
+              background: #ecf2ed;
+              box-shadow: 0px 1px 3px 1px rgb(157, 99, 74);
+              font-family: Roboto, sans-serif;
+              color: rgb(174, 125, 68);
+              font-size: 19.704px;
+              border-style: none;
+              border-color: var(--bs-purple);
+            "
+          >
+            Manage Feedback
+          </h4>
+          <div
+            class="d-flex flex-column align-items-end"
+            style="margin: 0px; margin-top: 15px"
+          >
+            <button
+              onclick="callremovefd();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 5px;
+                color: var(--bs-light);
+                background: rgba(169, 130, 72, 0.55);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+                font-size: 14px;
+              "
+            >
+              Remove Feedback</button
+            ><button
+              id="call-display-fd"
+              onclick="calldisplayfd();"
+              class="btn btn-primary text-center"
+              type="button"
+              style="
+                width: 80%;
+                margin-top: 15px;
+                color: var(--bs-light);
+                background: rgba(169, 130, 72, 0.55);
+                font-family: Roboto, sans-serif;
+                box-shadow: 0px 0px 2px 4px;
+                font-size: 14px;
+              "
+            >
+              Display Feedback
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        class="d-flex flex-column justify-content-center"
+        style="
+          height: 100%;
+          width: 70vw;
+          padding: 10px;
+          border: 5px none var(--bs-pink);
+        "
+      >
+        <div
+          id="add-staff-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <h1
+            class="text-center"
+            style="background: #faebeb; color: rgb(140, 74, 110)"
+          >
+            Add Staff
+          </h1>
+          <form class="d-flex flex-column">
+            <input
+              id="add-staff-name"
+              class="form-control"
+              type="text"
+              placeholder="Enter Name"
+              required=""
+              minlength="3"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="add-staff-password"
+              class="form-control"
+              type="text"
+              placeholder="Enter Password"
+              required=""
+              minlength="6"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="add-staff-class"
+              class="form-control"
+              type="text"
+              required=""
+              minlength="3"
+              maxlength="4"
+              placeholder="Enter Class (Standard)"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="add-staff-email"
+              class="form-control"
+              type="text"
+              placeholder="Enter Staff Email"
+              required=""
+              inputmode="email"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="add-staff-quali"
+              class="form-control"
+              type="text"
+              placeholder="Enter Qualification (if multiple place ',' comma)"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="add-staff-gender"
+              class="form-control"
+              type="text"
+              placeholder="Gender"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><button
+              onclick="addstaff();"
+              class="
+                btn btn-primary
+                justify-content-center
+                align-items-center align-self-center
+              "
+              type="button"
+              style="
+                margin-top: 10px;
+                width: 50%;
+                background: rgba(225, 101, 146, 0.84);
+              "
+            >
+              Add
+            </button>
+          </form>
+        </div>
+        <div
+          id="modify-staff-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <h1
+            class="text-center"
+            style="background: #faebeb; color: rgb(140, 74, 110)"
+          >
+            Modify Staff
+          </h1>
+          <div
+            style="
+              padding: 10px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+            "
+          >
+            <form class="d-flex flex-column">
+              <input
+                id="search-staff-id"
+                class="form-control"
+                type="text"
+                placeholder="Enter Id"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(156, 203, 128);
+                "
+              /><button
+                onclick="searchstaff();"
+                class="
+                  btn btn-primary
+                  justify-content-center
+                  align-items-center align-self-center
+                "
+                type="button"
+                style="
+                  margin-top: 10px;
+                  width: 50%;
+                  background: rgba(141, 225, 101, 0.9);
+                "
+              >
+                Seacrch
+              </button>
+            </form>
+          </div>
+          <form class="d-flex flex-column">
+            <input
+              id="modi-staff-name"
+              class="form-control"
+              type="text"
+              placeholder="Enter Name"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="modi-staff-password"
+              class="form-control"
+              type="text"
+              placeholder="Enter Password"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="modi-staff-class"
+              class="form-control"
+              type="text"
+              placeholder="Enter Class (Standard)"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="modi-staff-email"
+              class="form-control"
+              type="text"
+              placeholder="Enter Staff Email"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="modi-staff-quali"
+              class="form-control"
+              type="text"
+              placeholder="Enter Qualification (if multiple place ',' comma)"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><input
+              id="modi-staff-gender"
+              class="form-control"
+              type="text"
+              placeholder="Gender"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                border-left: 9px solid rgb(203, 128, 160);
+                box-shadow: 0px 0px 1px 1px;
+              "
+            /><button
+              onclick="modistaff();"
+              class="
+                btn btn-primary
+                justify-content-center
+                align-items-center align-self-center
+              "
+              type="button"
+              style="
+                margin-top: 10px;
+                width: 50%;
+                background: rgba(225, 101, 146, 0.84);
+              "
+            >
+              Modify
+            </button>
+          </form>
+        </div>
+
+        <div
+          id="modify-ac-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <h1
+            class="text-center"
+            style="background: #faebeb; color: rgb(140, 74, 110)"
+          >
+            Modify Achievement
+          </h1>
+          <div
+            style="
+              padding: 10px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+            "
+          >
+            <form class="d-flex flex-column">
+              <input
+                id="search-ac-id"
+                class="form-control"
+                type="text"
+                placeholder="Enter Id"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(156, 203, 128);
+                "
+              /><button
+                onclick="searchac();"
+                class="
+                  btn btn-primary
+                  justify-content-center
+                  align-items-center align-self-center
+                "
+                type="button"
+                style="
+                  margin-top: 10px;
+                  width: 50%;
+                  background: rgba(141, 225, 101, 0.9);
+                "
+              >
+                Search
+              </button>
+            </form>
+          </div>
+          <form class="d-flex flex-column">
+            <input
+              id="modi-ac-title"
+              class="form-control"
+              type="text"
+              placeholder="Enter Title"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><input
+              id="modi-ac-desc"
+              class="form-control"
+              type="text"
+              placeholder="Enter Description"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><input
+              id="modi-ac-year"
+              class="form-control"
+              type="text"
+              required=""
+              placeholder="Enter Year"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><button
+              onclick="modiac();"
+              class="
+                btn btn-primary
+                justify-content-center
+                align-items-center align-self-center
+              "
+              type="button"
+              style="
+                margin-top: 10px;
+                width: 50%;
+                background: rgba(101, 225, 136, 0.84);
+              "
+            >
+              Modify
+            </button>
+          </form>
+        </div>
+
+        <div
+          id="add-student-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <h1
+            class="text-center"
+            style="background: #faebeb; color: rgb(171, 66, 167)"
+          >
+            Add Student
+          </h1>
+          <form class="d-flex flex-column">
+            <input
+              id="add-class"
+              class="form-control"
+              type="text"
+              placeholder="Enter Class (Standard)"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><input
+              id="add-mentor-id"
+              class="form-control"
+              type="text"
+              placeholder="Enter Mentor ID"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><input
+              id="add-name"
+              class="form-control"
+              type="text"
+              required=""
+              placeholder="Enter Name"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><input
+              id="add-phone"
+              class="form-control"
+              type="number"
+              placeholder="Enter Phone Number"
+              required=""
+              inputmode="email"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><input
+              id="add-gender"
+              class="form-control"
+              type="text"
+              placeholder="Gender"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><input
+              id="add-blood-group"
+              class="form-control"
+              type="text"
+              placeholder="Blood Group"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(194, 67, 189);
+              "
+            /><button
+              onclick="addstudent();"
+              class="
+                btn btn-primary
+                justify-content-center
+                align-items-center align-self-center
+              "
+              type="button"
+              style="
+                margin-top: 10px;
+                width: 50%;
+                background: rgba(225, 101, 205, 0.84);
+              "
+            >
+              add
+            </button>
+          </form>
+        </div>
+        <div
+          id="modify-student-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <div
+            style="
+              padding: 10px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+            "
+          >
+            <h1
+              class="text-center"
+              style="background: #faebeb; color: rgb(171, 66, 167)"
+            >
+              modify Student
+            </h1>
+            <div
+              style="
+                padding: 10px;
+                border-width: 3.4px;
+                border-style: none;
+                border-left-style: none;
+              "
+            >
+              <form class="d-flex flex-column">
+                <input
+                  id="search-id"
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Id"
+                  required=""
+                  style="
+                    margin-top: 11px;
+                    font-size: 17px;
+                    background: rgba(239, 231, 231, 0.94);
+                    box-shadow: 0px 0px 1px 1px;
+                    border-left: 9px solid rgb(156, 203, 128);
+                  "
+                /><button
+                  onclick="searchstudent();"
+                  class="
+                    btn btn-primary
+                    justify-content-center
+                    align-items-center align-self-center
+                  "
+                  type="button"
+                  style="
+                    margin-top: 10px;
+                    width: 50%;
+                    background: rgba(141, 225, 101, 0.9);
+                  "
+                >
+                  Seacrch
+                </button>
+              </form>
+            </div>
+            <form class="d-flex flex-column">
+              <input
+                id="modi-class"
+                class="form-control"
+                type="text"
+                placeholder="Enter Class (Standard)"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                id="modi-mentor-id"
+                class="form-control"
+                type="text"
+                placeholder="Enter Mentor ID"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                id="modi-name"
+                class="form-control"
+                type="text"
+                required=""
+                placeholder="Enter Name"
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                id="modi-phone"
+                class="form-control"
+                type="text"
+                placeholder="Enter Phone Number"
+                required=""
+                inputmode="email"
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                id="modi-gender"
+                class="form-control"
+                type="text"
+                placeholder="Gender"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                id="modi-blood-group"
+                class="form-control"
+                type="text"
+                placeholder="Blood Group"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><button
+                onclick="modistudent();"
+                class="
+                  btn btn-primary
+                  justify-content-center
+                  align-items-center align-self-center
+                "
+                type="button"
+                style="
+                  margin-top: 10px;
+                  width: 50%;
+                  background: rgba(225, 101, 205, 0.84);
+                "
+              >
+                modify
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          id="add-achievement-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <h1
+            class="text-center"
+            style="background: #faebeb; color: rgb(81, 171, 66)"
+          >
+            Add Achievement
+          </h1>
+          <form class="d-flex flex-column">
+            <input
+              id="add-ac-title"
+              class="form-control"
+              type="text"
+              placeholder="Enter Title"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><input
+              id="add-ac-desc"
+              class="form-control"
+              type="text"
+              placeholder="Enter Description"
+              required=""
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><input
+              id="add-ac-year"
+              class="form-control"
+              type="text"
+              required=""
+              placeholder="Enter Year"
+              style="
+                margin-top: 11px;
+                font-size: 17px;
+                background: rgba(239, 231, 231, 0.94);
+                box-shadow: 0px 0px 1px 1px;
+                border-left: 9px solid rgb(67, 194, 87);
+              "
+            /><button
+              onclick="addac();"
+              class="
+                btn btn-primary
+                justify-content-center
+                align-items-center align-self-center
+              "
+              type="button"
+              style="
+                margin-top: 10px;
+                width: 50%;
+                background: rgba(101, 225, 136, 0.84);
+              "
+            >
+              Add
+            </button>
+          </form>
+        </div>
+        <div
+          id="modify-student-form"
+          class="d-none"
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <div
+            style="
+              padding: 10px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+            "
+          >
+            <h1
+              class="text-center"
+              style="background: #faebeb; color: rgb(171, 66, 167)"
+            >
+              Modify Student
+            </h1>
+            <div
+              style="
+                padding: 10px;
+                border-width: 3.4px;
+                border-style: none;
+                border-left-style: none;
+              "
+            >
+              <form class="d-flex flex-column">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Id"
+                  required=""
+                  style="
+                    margin-top: 11px;
+                    font-size: 17px;
+                    background: rgba(239, 231, 231, 0.94);
+                    box-shadow: 0px 0px 1px 1px;
+                    border-left: 9px solid rgb(156, 203, 128);
+                  "
+                /><button
+                  class="
+                    btn btn-primary
+                    justify-content-center
+                    align-items-center align-self-center
+                  "
+                  type="button"
+                  style="
+                    margin-top: 10px;
+                    width: 50%;
+                    background: rgba(141, 225, 101, 0.9);
+                  "
+                >
+                  Seacrch
+                </button>
+              </form>
+            </div>
+            <form class="d-flex flex-column">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Enter Title"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                class="form-control"
+                type="password"
+                placeholder="Enter Description"
+                required=""
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><input
+                class="form-control"
+                type="text"
+                required=""
+                placeholder="Year"
+                style="
+                  margin-top: 11px;
+                  font-size: 17px;
+                  background: rgba(239, 231, 231, 0.94);
+                  box-shadow: 0px 0px 1px 1px;
+                  border-left: 9px solid rgb(194, 67, 189);
+                "
+              /><button
+                class="
+                  btn btn-primary
+                  justify-content-center
+                  align-items-center align-self-center
+                "
+                type="button"
+                style="
+                  margin-top: 10px;
+                  width: 50%;
+                  background: rgba(225, 101, 205, 0.84);
+                "
+              >
+                Modify
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <div
+            id="remove-id-form"
+            class="d-none"
+            style="
+              padding: 10px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+            "
+          >
+            <h1
+              id="remove-heading"
+              class="text-center"
+              style="background: #faebeb; color: rgb(171, 66, 167)"
+            >
+              Remove Feedback
+            </h1>
+            <div
+              style="
+                padding: 10px;
+                border-width: 3.4px;
+                border-style: none;
+                border-left-style: none;
+              "
+            >
+              <form class="d-flex flex-column">
+                <input
+                  id="remove-id"
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter Id"
+                  required=""
+                  style="
+                    margin-top: 11px;
+                    font-size: 17px;
+                    background: rgba(239, 231, 231, 0.94);
+                    box-shadow: 0px 0px 1px 1px;
+                    border-left: 9px solid rgb(156, 203, 128);
+                  "
+                /><button
+                  onclick="removedata();"
+                  class="
+                    btn btn-primary
+                    justify-content-center
+                    align-items-center align-self-center
+                  "
+                  type="button"
+                  style="
+                    margin-top: 10px;
+                    width: 50%;
+                    background: rgba(141, 225, 101, 0.9);
+                  "
+                >
+                  Remove
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            padding: 10px;
+            border-width: 3.4px;
+            border-style: none;
+            border-left-style: none;
+          "
+        >
+          <div
+            id="display-data"
+            class="d-none"
+            style="
+              font-weight: bold;
+              font-size: large;
+              width: 100%;
+              height: 400px;
+              padding: 20px;
+              border-width: 3.4px;
+              border-style: none;
+              border-left-style: none;
+              overflow: scroll;
+              box-shadow: 0px 0px 3px rgb(7, 7, 7, 0.5);
+            "
+          ></div>
+        </div>
+      </section>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      function calladdStaff() {
+        document.getElementById("add-staff-form").className = "d-block";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callremovestaff() {
+        console.log("remove staff call");
+        document.getElementById("remove-heading").innerHTML = "Remove Staff";
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-block";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callmodifystaff() {
+        console.log("modify staff call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-block";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function calldisplaystaff() {
+        console.log("display staff call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-block";
+
+        var myTableDiv = document.getElementById("display-data");
+        myTableDiv.innerHTML = "";
+        var table = document.createElement("TABLE");
+        table.border = "2";
+        table.cellspacing = "3";
+        table.style.width = "100%";
+        var tableBody = document.createElement("TBODY");
+        table.appendChild(tableBody);
+
+        eel.displayStaff()(function (mes) {
+          //alert(mes);
+          var temp = mes[0];
+          var count = mes[1];
+          let some = [];
+          for (let i = 0; i < count; i++) {
+            some.push(temp[i]);
+          }
+          //alert(some);
+          for (let i = 0; i < count; i++) {
+            let data = some[i].split("|");
+            data.pop();
+
+            var tr = document.createElement("TR");
+            tr.style.border = "thick solid #ffeefe";
+            tableBody.appendChild(tr);
+
+            for (let j = 0; j < data.length; j++) {
+              var td = document.createElement("TD");
+              td.width = "auto";
+              td.appendChild(document.createTextNode(`${data[j]}`));
+              td.style.border = "thick solid #ffeefe";
+              td.style.textAlign = "center";
+              tr.appendChild(td);
+            }
+          }
+          myTableDiv.appendChild(table);
+        });
+      }
+
+      function calladdstudent() {
+        console.log("add student call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-block";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callremovestudent() {
+        console.log("remove student call");
+        document.getElementById("remove-heading").innerHTML = "Remove Student";
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-block";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callmodifystudent() {
+        console.log("modify student call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-block";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function calldisplaystudent() {
+        console.log("display student call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-block";
+
+        var myTableDiv = document.getElementById("display-data");
+        myTableDiv.innerHTML = "";
+        var table = document.createElement("TABLE");
+        table.border = "2";
+        table.cellspacing = "3";
+        table.style.width = "100%";
+        var tableBody = document.createElement("TBODY");
+        table.appendChild(tableBody);
+
+        eel.displayStudent()(function (mes) {
+          //alert(mes);
+          var temp = mes[0];
+          var count = mes[1];
+          let some = [];
+          for (let i = 0; i < count; i++) {
+            some.push(temp[i]);
+          }
+          //alert(some);
+          for (let i = 0; i < count; i++) {
+            let data = some[i].split("|");
+            data.pop();
+
+            var tr = document.createElement("TR");
+            tr.style.border = "thick solid #ffeefe";
+            tableBody.appendChild(tr);
+
+            for (let j = 0; j < data.length; j++) {
+              var td = document.createElement("TD");
+              td.width = "auto";
+              td.appendChild(document.createTextNode(`${data[j]}`));
+              td.style.border = "thick solid #ffeefe";
+              td.style.textAlign = "center";
+              tr.appendChild(td);
+            }
+          }
+          myTableDiv.appendChild(table);
+        });
+      }
+
+      function calladdac() {
+        console.log("add ac call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-block";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callremoveac() {
+        console.log("remove ac call");
+        document.getElementById("remove-heading").innerHTML =
+          "Remove Achievement";
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-block";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function callmodifyac() {
+        console.log("modify ac call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-block";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function calldisplayac() {
+        console.log("display ac call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-block";
+
+        var myTableDiv = document.getElementById("display-data");
+        myTableDiv.innerHTML = "";
+        var table = document.createElement("TABLE");
+        table.border = "2";
+        table.cellspacing = "3";
+        table.style.width = "100%";
+        var tableBody = document.createElement("TBODY");
+        table.appendChild(tableBody);
+
+        eel.displayAc()(function (mes) {
+          //alert(mes);
+          var temp = mes[0];
+          var count = mes[1];
+          let some = [];
+          for (let i = 0; i < count; i++) {
+            some.push(temp[i]);
+          }
+          //alert(some);
+          for (let i = 0; i < count; i++) {
+            let data = some[i].split("|");
+            data.pop();
+
+            var tr = document.createElement("TR");
+            tr.style.border = "thick solid #ffeefe";
+            tableBody.appendChild(tr);
+
+            for (let j = 0; j < data.length; j++) {
+              var td = document.createElement("TD");
+              td.width = "auto";
+              td.appendChild(document.createTextNode(`${data[j]}`));
+              td.style.border = "thick solid #ffeefe";
+              td.style.textAlign = "center";
+              tr.appendChild(td);
+            }
+          }
+          myTableDiv.appendChild(table);
+        });
+      }
+
+      function callremovefd() {
+        console.log("remove fd call");
+        document.getElementById("remove-heading").innerHTML = "Remove Feedback";
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-block";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-none";
+      }
+
+      function calldisplayfd() {
+        console.log("display fd call");
+        document.getElementById("add-staff-form").className = "d-none";
+        document.getElementById("modify-staff-form").className = "d-none";
+        document.getElementById("modify-student-form").className = "d-none";
+        document.getElementById("add-student-form").className = "d-none";
+        document.getElementById("add-achievement-form").className = "d-none";
+        document.getElementById("remove-id-form").className = "d-none";
+        document.getElementById("modify-ac-form").className = "d-none";
+        document.getElementById("display-data").className = "d-block";
+
+        var myTableDiv = document.getElementById("display-data");
+        myTableDiv.innerHTML = "";
+        var table = document.createElement("TABLE");
+        table.border = "2";
+        table.cellspacing = "3";
+        table.style.width = "100%";
+        var tableBody = document.createElement("TBODY");
+        table.appendChild(tableBody);
+
+        eel.displayFd()(function (mes) {
+          //alert(mes);
+          var temp = mes[0];
+          var count = mes[1];
+          let some = [];
+          for (let i = 0; i < count; i++) {
+            some.push(temp[i]);
+          }
+
+          for (let i = 0; i < count; i++) {
+            let data = some[i].split("|");
+            data.pop();
+
+            var tr = document.createElement("TR");
+            tr.style.border = "thick solid #ffeefe";
+            tableBody.appendChild(tr);
+
+            for (let j = 0; j < data.length; j++) {
+              var td = document.createElement("TD");
+              td.width = "auto";
+              td.appendChild(document.createTextNode(`${data[j]}`));
+              td.style.border = "thick solid #ffeefe";
+              td.style.textAlign = "center";
+              tr.appendChild(td);
+            }
+          }
+          myTableDiv.appendChild(table);
+        });
+      }
+    </script>
+    <script>
+      function addstudent() {
+        const classes = document.getElementById("add-class").value;
+        const mentorid = document.getElementById("add-mentor-id").value;
+        const name = document.getElementById("add-name").value;
+        const phone = document.getElementById("add-phone").value;
+        const gender = document.getElementById("add-gender").value;
+        const bloodgroup = document.getElementById("add-blood-group").value;
+
+        //alert(classes + mentorid + name + phone + gender + bloodgroup);
+        eel.addStudent(
+          classes,
+          mentorid,
+          name,
+          phone,
+          gender,
+          bloodgroup
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+
+      function removedata() {
+        const id = document.getElementById("remove-id").value;
+
+        eel.removeId(id)(function (mes) {
+          alert(mes);
+        });
+      }
+
+      function searchstudent() {
+        const id = document.getElementById("search-id").value;
+
+        eel.searchData(id)(function (mes) {
+          alert(mes);
+          var id = mes;
+          id = String(id);
+          data = id.split(",");
+
+          document.getElementById("modi-class").value = data[1];
+          document.getElementById("modi-mentor-id").value = data[2];
+          document.getElementById("modi-name").value = data[3];
+          document.getElementById("modi-phone").value = data[4];
+          document.getElementById("modi-gender").value = data[5];
+          document.getElementById("modi-blood-group").value = data[6];
+        });
+      }
+
+      function modistudent() {
+        const modiclass = document.getElementById("modi-class").value;
+        const modimentor = document.getElementById("modi-mentor-id").value;
+        const modiname = document.getElementById("modi-name").value;
+        const modiphone = document.getElementById("modi-phone").value;
+        const modigender = document.getElementById("modi-gender").value;
+        const modiblood = document.getElementById("modi-blood-group").value;
+        const modid = document.getElementById("search-id").value;
+
+        eel.modifyStudent(
+          modid,
+          modiclass,
+          modimentor,
+          modiname,
+          modiphone,
+          modigender,
+          modiblood
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+    </script>
+    <script>
+      function addstaff() {
+        const name = document.getElementById("add-staff-name").value;
+        const password = document.getElementById("add-staff-password").value;
+        const classes = document.getElementById("add-staff-class").value;
+        const email = document.getElementById("add-staff-email").value;
+        const quali = document.getElementById("add-staff-quali").value;
+        const gender = document.getElementById("add-staff-gender").value;
+
+        //alert(classes + mentorid + name + phone + gender + bloodgroup);
+        eel.addStaff(
+          name,
+          password,
+          classes,
+          email,
+          quali,
+          gender
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+
+      function searchstaff() {
+        const id = document.getElementById("search-staff-id").value;
+
+        eel.searchData(id)(function (mes) {
+          alert(mes);
+          var id = mes;
+          id = String(id);
+          data = id.split(",");
+
+          document.getElementById("modi-staff-name").value = data[1];
+          document.getElementById("modi-staff-password").value = data[2];
+          document.getElementById("modi-staff-class").value = data[3];
+          document.getElementById("modi-staff-email").value = data[4];
+          document.getElementById("modi-staff-quali").value = data[5];
+          document.getElementById("modi-staff-gender").value = data[6];
+        });
+      }
+
+      function modistaff() {
+        const modiname = document.getElementById("modi-staff-name").value;
+        const modipass = document.getElementById("modi-staff-password").value;
+        const modiclass = document.getElementById("modi-staff-class").value;
+        const modiemail = document.getElementById("modi-staff-email").value;
+        const modiquali = document.getElementById("modi-staff-quali").value;
+        const modigender = document.getElementById("modi-staff-gender").value;
+        const modiid = document.getElementById("search-staff-id").value;
+
+        eel.modifyStaff(
+          modiid,
+          modiname,
+          modipass,
+          modiclass,
+          modiemail,
+          modiquali,
+          modigender
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+    </script>
+    <script>
+      function addac() {
+        const title = document.getElementById("add-ac-title").value;
+        const desc = document.getElementById("add-ac-desc").value;
+        const year = document.getElementById("add-ac-year").value;
+
+        //alert(classes + mentorid + name + phone + gender + bloodgroup);
+        eel.addAc(
+          title,
+          desc,
+          year
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+
+      function searchac() {
+        const id = document.getElementById("search-ac-id").value;
+
+        eel.searchData(id)(function (mes) {
+          alert(mes);
+          var id = mes;
+          id = String(id);
+          data = id.split(",");
+
+          document.getElementById("modi-ac-title").value = data[1];
+          document.getElementById("modi-ac-desc").value = data[2];
+          document.getElementById("modi-ac-year").value = data[3];
+        });
+      }
+
+      function modiac() {
+        const modititle = document.getElementById("modi-ac-title").value;
+        const modidesc = document.getElementById("modi-ac-desc").value;
+        const modiyear = document.getElementById("modi-ac-year").value;
+        const modiid = document.getElementById("search-ac-id").value;
+
+        eel.modifyAc(
+          modiid,
+          modititle,
+          modidesc,
+          modiyear
+        )(function (mes) {
+          alert(mes);
+        });
+      }
+    </script>
+  </body>
+</html>
